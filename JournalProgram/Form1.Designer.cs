@@ -87,6 +87,7 @@
             this.tagEditTextBox = new System.Windows.Forms.TextBox();
             this.tagEditErrLbl = new System.Windows.Forms.Label();
             this.tagListBox = new System.Windows.Forms.ListBox();
+            this.dispEditEntryBtn = new System.Windows.Forms.Button();
             this.entryPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -144,7 +145,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1123, 61);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // closeBtn
             // 
@@ -154,7 +155,7 @@
             this.closeBtn.Location = new System.Drawing.Point(1061, 3);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(59, 30);
-            this.closeBtn.TabIndex = 0;
+            this.closeBtn.TabIndex = 1;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
@@ -166,7 +167,7 @@
             this.encySubmitBtn.Location = new System.Drawing.Point(945, 3);
             this.encySubmitBtn.Name = "encySubmitBtn";
             this.encySubmitBtn.Size = new System.Drawing.Size(110, 30);
-            this.encySubmitBtn.TabIndex = 1;
+            this.encySubmitBtn.TabIndex = 0;
             this.encySubmitBtn.Text = "Submit Entry";
             this.encySubmitBtn.UseVisualStyleBackColor = true;
             this.encySubmitBtn.Click += new System.EventHandler(this.button1_Click);
@@ -224,6 +225,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(186, 35);
             this.button1.TabIndex = 0;
+            this.button1.TabStop = false;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -233,6 +235,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(186, 35);
             this.button2.TabIndex = 1;
+            this.button2.TabStop = false;
             this.button2.Text = "New Entry";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -242,6 +245,7 @@
             this.dispBtn1.Name = "dispBtn1";
             this.dispBtn1.Size = new System.Drawing.Size(186, 35);
             this.dispBtn1.TabIndex = 2;
+            this.dispBtn1.TabStop = false;
             this.dispBtn1.Text = "Notebooks";
             this.dispBtn1.UseVisualStyleBackColor = true;
             this.dispBtn1.Click += new System.EventHandler(this.dispBtn1_Click);
@@ -252,6 +256,7 @@
             this.tagBtn1.Name = "tagBtn1";
             this.tagBtn1.Size = new System.Drawing.Size(186, 35);
             this.tagBtn1.TabIndex = 4;
+            this.tagBtn1.TabStop = false;
             this.tagBtn1.Text = "Tags";
             this.tagBtn1.UseVisualStyleBackColor = true;
             this.tagBtn1.Click += new System.EventHandler(this.tagBtn1_Click);
@@ -271,7 +276,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.706093F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1123, 558);
-            this.tableLayoutPanel3.TabIndex = 4;
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // bodyTextBox
             // 
@@ -279,7 +284,7 @@
             this.bodyTextBox.Location = new System.Drawing.Point(3, 3);
             this.bodyTextBox.Name = "bodyTextBox";
             this.bodyTextBox.Size = new System.Drawing.Size(1117, 509);
-            this.bodyTextBox.TabIndex = 1;
+            this.bodyTextBox.TabIndex = 0;
             this.bodyTextBox.Text = "";
             this.bodyTextBox.TextChanged += new System.EventHandler(this.bodyTextBox_TextChanged);
             // 
@@ -313,6 +318,7 @@
             this.entryTagSelect.Name = "entryTagSelect";
             this.entryTagSelect.Size = new System.Drawing.Size(138, 28);
             this.entryTagSelect.TabIndex = 1;
+            this.entryTagSelect.TabStop = false;
             // 
             // addTagBtn
             // 
@@ -322,6 +328,7 @@
             this.addTagBtn.Name = "addTagBtn";
             this.addTagBtn.Size = new System.Drawing.Size(79, 30);
             this.addTagBtn.TabIndex = 2;
+            this.addTagBtn.TabStop = false;
             this.addTagBtn.Text = "Add Tag";
             this.addTagBtn.UseVisualStyleBackColor = true;
             this.addTagBtn.Click += new System.EventHandler(this.addTagBtn_Click);
@@ -343,6 +350,7 @@
             this.deleteTagsBtn.Name = "deleteTagsBtn";
             this.deleteTagsBtn.Size = new System.Drawing.Size(117, 30);
             this.deleteTagsBtn.TabIndex = 4;
+            this.deleteTagsBtn.TabStop = false;
             this.deleteTagsBtn.Text = "Remove Tags";
             this.deleteTagsBtn.UseVisualStyleBackColor = true;
             this.deleteTagsBtn.Click += new System.EventHandler(this.deleteTagsBtn_Click);
@@ -373,6 +381,7 @@
             this.flowLayoutPanel3.Controls.Add(this.nextEntryBtn);
             this.flowLayoutPanel3.Controls.Add(this.label2);
             this.flowLayoutPanel3.Controls.Add(this.prevEntryBtn);
+            this.flowLayoutPanel3.Controls.Add(this.dispEditEntryBtn);
             this.flowLayoutPanel3.Controls.Add(this.deleteBtn);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(202, 600);
@@ -429,7 +438,7 @@
             // deleteBtn
             // 
             this.deleteBtn.AutoSize = true;
-            this.deleteBtn.Location = new System.Drawing.Point(718, 3);
+            this.deleteBtn.Location = new System.Drawing.Point(624, 3);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(107, 30);
             this.deleteBtn.TabIndex = 4;
@@ -454,7 +463,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.473684F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.90452F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 241F));
             this.tableLayoutPanel1.Controls.Add(this.dispSearchBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispSearchBoxTitle, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispTagTitle, 3, 0);
@@ -473,7 +482,7 @@
             this.dispSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dispSearchBox.Location = new System.Drawing.Point(566, 3);
             this.dispSearchBox.Name = "dispSearchBox";
-            this.dispSearchBox.Size = new System.Drawing.Size(246, 26);
+            this.dispSearchBox.Size = new System.Drawing.Size(245, 26);
             this.dispSearchBox.TabIndex = 0;
             this.dispSearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dispSearchBox_KeyDown);
             // 
@@ -491,7 +500,7 @@
             // 
             this.dispTagTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dispTagTitle.AutoSize = true;
-            this.dispTagTitle.Location = new System.Drawing.Point(818, 3);
+            this.dispTagTitle.Location = new System.Drawing.Point(817, 3);
             this.dispTagTitle.Name = "dispTagTitle";
             this.dispTagTitle.Size = new System.Drawing.Size(52, 20);
             this.dispTagTitle.TabIndex = 2;
@@ -502,9 +511,9 @@
             this.dispTagBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dispTagBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dispTagBox.FormattingEnabled = true;
-            this.dispTagBox.Location = new System.Drawing.Point(885, 3);
+            this.dispTagBox.Location = new System.Drawing.Point(884, 3);
             this.dispTagBox.Name = "dispTagBox";
-            this.dispTagBox.Size = new System.Drawing.Size(235, 28);
+            this.dispTagBox.Size = new System.Drawing.Size(236, 28);
             this.dispTagBox.TabIndex = 3;
             this.dispTagBox.SelectedIndexChanged += new System.EventHandler(this.dispTagBox_SelectedIndexChanged);
             // 
@@ -762,14 +771,25 @@
             this.tagListBox.TabIndex = 6;
             this.tagListBox.SelectedIndexChanged += new System.EventHandler(this.tagListBox_SelectedIndexChanged);
             // 
+            // dispEditEntryBtn
+            // 
+            this.dispEditEntryBtn.AutoSize = true;
+            this.dispEditEntryBtn.Location = new System.Drawing.Point(737, 3);
+            this.dispEditEntryBtn.Name = "dispEditEntryBtn";
+            this.dispEditEntryBtn.Size = new System.Drawing.Size(88, 30);
+            this.dispEditEntryBtn.TabIndex = 5;
+            this.dispEditEntryBtn.Text = "Edit Entry";
+            this.dispEditEntryBtn.UseVisualStyleBackColor = true;
+            this.dispEditEntryBtn.Click += new System.EventHandler(this.dispEditEntryBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 664);
-            this.Controls.Add(this.displayPanel);
             this.Controls.Add(this.entryPanel);
             this.Controls.Add(this.tagPanel);
+            this.Controls.Add(this.displayPanel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -862,6 +882,7 @@
         private System.Windows.Forms.Label tagPanelTitle;
         private System.Windows.Forms.TextBox tagEditTextBox;
         private System.Windows.Forms.Label tagEditErrLbl;
+        private System.Windows.Forms.Button dispEditEntryBtn;
     }
 }
 

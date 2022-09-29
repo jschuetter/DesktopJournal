@@ -27,3 +27,4 @@ C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\bin\Debug\System.Runti
 C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\obj\Debug\JournalProgram.csproj.CopyComplete
 C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\obj\Debug\JournalProgram.Form2.resources
+C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\obj\Debug\JournalProgram.Form3.resources

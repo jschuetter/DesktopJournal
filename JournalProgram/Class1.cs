@@ -86,6 +86,7 @@ namespace JournalProgram
         public static List<Entry> getCsvEntries()
         {
             List<Entry> entryList = new List<Entry>();
+            bool goodStart = true;
 
             using (var reader = new StreamReader(csvPath))
             { 
@@ -93,10 +94,19 @@ namespace JournalProgram
                 {
                     var entry = new Entry();
                     var entries = csv.GetRecords<Entry>();
-                    entryList = new List<Entry>(entries);
+                    try
+                    {
+                        entryList = new List<Entry>(entries);
+                    } catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Message);
+                        //Manager.reInitCsv();
+                        goodStart = false;
+                    }
                     
                 }
             }
+            if (!goodStart) reInitCsv();
             return entryList;
         }
         //Get list of only entries containing certain tag
@@ -237,9 +247,14 @@ namespace JournalProgram
             using (var writer = new StreamWriter(csvPath))
             {
                 using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-                {
-                    csv.WriteRecords(Manager.entryCSV);
-                    csv.NextRecord();
+                { 
+                    //Rewrite id fields
+                    for (int i = 0; i < entryCSV.Count; i++)
+                    {
+                        Manager.entryCSV[i].Id = i;
+                    }
+                    csv.WriteRecords(entryCSV);
+                    if (entryCSV.Count > 0) csv.NextRecord();       //Prevent creation of empty space in CSV file if all entries are deleted
                 }
             }
         }
@@ -251,14 +266,15 @@ namespace JournalProgram
             rewriteCsv();
         }
     }
-    
+
     //Create class for entries to be stored in local CSV file
     public class Entry
     {
-        
+
         public int Id { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
+        public DateTime CreatedDate {get; set;}
         public string Body { get; set; }
         public string Tags { get; set; }
     }

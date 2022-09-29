@@ -64,8 +64,15 @@ namespace JournalProgram
         private void Form1_Activated(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
-            updateDisplayPanel();
-            Debug.WriteLine("Updated display panel on new window focus");
+            try
+            {
+                updateDisplayPanel();
+                Debug.WriteLine("Updated display panel on new window focus");
+            } catch (Exception ex)
+            {
+                Debug.Write(ex.Message + "\n");
+                Debug.WriteLine("Could not update display panel on new window focus");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -143,7 +150,8 @@ namespace JournalProgram
             if (bodyTextBox.Text != String.Empty)
             {
                 //Create new entry, add to local entry list, and write to .csv file
-                Entry newEntry = new Entry { Id = Manager.entryCSV.Count + 1, Title = titleTextBox.Text, Date = System.DateTime.Now, Body = bodyTextBox.Text, Tags = listToString(Manager.currentEntryTags)};
+                Entry newEntry = new Entry { Id = Manager.entryCSV.Count + 1, Title = titleTextBox.Text, CreatedDate = System.DateTime.Now, Date = System.DateTime.Now, 
+                    Body = bodyTextBox.Text, Tags = listToString(Manager.currentEntryTags)};
                 Manager.entryCSV.Add(newEntry);
                 Manager.writeEntryToCsv(newEntry);
 
@@ -214,6 +222,14 @@ namespace JournalProgram
                 Manager.dispInc--;
                 updateDisplayPanel();
             }
+        }
+
+        //Open new window to edit currently showing entry
+        private void dispEditEntryBtn_Click(object sender, EventArgs e)
+        {
+            updateTags();
+            Form3 entryEditScreen = new Form3();
+            entryEditScreen.Show();
         }
 
         //Delete currently showing entry
@@ -340,71 +356,78 @@ namespace JournalProgram
         //Functions to update labels on panel switch
         private void updateDisplayPanel()
         {
-            try
+            if (Manager.entryCSV.Count > 0)
             {
-                Manager.entryCSV = Manager.getCsvEntries();
-            }
-            catch (Exception ex)
-            {
-                //Rewrite CSV file if there was an error retrieving entries due to formatting
-                Debug.Write(ex.ToString() + "\n");
-                //Manager.initCsv();
-                Manager.rewriteCsv();
-                Debug.WriteLine("Emergency file rewrite");
-            }
-            Entry currentEntry = new Entry();
-            switch (Manager.displayMode)   //Changes list of entries to display for different display modes
-            {
-                default:
-                    Manager.entryResults.Clear();
-                    Manager.entryResults = Manager.entryCSV;
-                    dispEntryCountLbl.Text = (Manager.dispInc + 1).ToString() + "/" + Manager.entryCSV.Count();
-                    currentEntry = Manager.entryCSV[Manager.dispInc];
-                    dispIdLbl.Text = "Displaying: all entries";
-                    dispSearchBox.Text = String.Empty;
-                    Manager.currentQuery = String.Empty;
-                    break;
+                try
+                {
+                    Manager.entryCSV = Manager.getCsvEntries();
+                }
+                catch (Exception ex)
+                {
+                    //Rewrite CSV file if there was an error retrieving entries due to formatting
+                    Debug.Write(ex.Message + "\n");
+                    //Manager.initCsv();
+                    Manager.rewriteCsv();
+                    Debug.WriteLine("Emergency file rewrite");
+                }
+                Entry currentEntry = new Entry();
+                switch (Manager.displayMode)   //Changes list of entries to display for different display modes
+                {
+                    default:
+                        Manager.entryResults.Clear();
+                        Manager.entryResults = Manager.entryCSV;
+                        dispEntryCountLbl.Text = (Manager.dispInc + 1).ToString() + "/" + Manager.entryCSV.Count();
+                        currentEntry = Manager.entryCSV[Manager.dispInc];
+                        dispIdLbl.Text = "Displaying: all entries";
+                        dispSearchBox.Text = String.Empty;
+                        Manager.currentQuery = String.Empty;
+                        break;
 
-                case "id":
-                    Manager.entryResults.Clear();
-                    Manager.entryResults = Manager.getCsvEntriesWithTag(dispTagBox.Text);
-                    dispEntryCountLbl.Text = (Manager.dispInc + 1).ToString() + "/" + Manager.entryResults.Count();
-                    currentEntry = Manager.entryResults[Manager.dispInc];
-                    dispIdLbl.Text = "Displaying: [id]  " + dispTagBox.Text + "  |  Deselect tag to return";
-                    break;
+                    case "id":
+                        Manager.entryResults.Clear();
+                        Manager.entryResults = Manager.getCsvEntriesWithTag(dispTagBox.Text);
+                        dispEntryCountLbl.Text = (Manager.dispInc + 1).ToString() + "/" + Manager.entryResults.Count();
+                        currentEntry = Manager.entryResults[Manager.dispInc];
+                        dispIdLbl.Text = "Displaying: [id]  " + dispTagBox.Text + "  |  Deselect tag to return";
+                        break;
 
-                case "search":
-                    Manager.entryResults.Clear();
-                    switch (Manager.searchMode)   //Changes list of search results to display based on selected filter (changed in Form2)
-                    {
-                        default:
-                            foreach (Result r in Manager.bodyResults)
-                            {
-                                Manager.entryResults.Add(r.Entry);
-                            }
-                            break;
-                        case 1:
-                            foreach (Result r in Manager.titleResults)
-                            {
-                                Manager.entryResults.Add(r.Entry);
-                            }
-                            break;
-                        case 2:
-                            foreach (Result r in Manager.tagResults)
-                            {
-                                Manager.entryResults.Add(r.Entry);
-                            }
-                            break;
-                    }
-                    dispEntryCountLbl.Text = (Manager.dispInc + 1).ToString() + "/" + Manager.entryResults.Count();   //Update page number label
-                    currentEntry = Manager.entryResults[Manager.dispInc];   
-                    dispIdLbl.Text = "Displaying: [search results] " + dispSearchBox.Text + "  |  Close search results to return";
-                    break;
+                    case "search":
+                        Manager.entryResults.Clear();
+                        switch (Manager.searchMode)   //Changes list of search results to display based on selected filter (changed in Form2)
+                        {
+                            default:
+                                foreach (Result r in Manager.bodyResults)
+                                {
+                                    Manager.entryResults.Add(r.Entry);
+                                }
+                                break;
+                            case 1:
+                                foreach (Result r in Manager.titleResults)
+                                {
+                                    Manager.entryResults.Add(r.Entry);
+                                }
+                                break;
+                            case 2:
+                                foreach (Result r in Manager.tagResults)
+                                {
+                                    Manager.entryResults.Add(r.Entry);
+                                }
+                                break;
+                        }
+                        dispEntryCountLbl.Text = (Manager.dispInc + 1).ToString() + "/" + Manager.entryResults.Count();   //Update page number label
+                        currentEntry = Manager.entryResults[Manager.dispInc];
+                        dispIdLbl.Text = "Displaying: [search results] " + dispSearchBox.Text + "  |  Close search results to return";
+                        break;
+                }
+                //Update currently displaying entry title, body, and tags
+                dispBodyText.Text = currentEntry.Body;
+                dispTitleLbl.Text = currentEntry.Title + "  |  " + currentEntry.Date.DayOfWeek + ", " + currentEntry.Date.ToString("MMMM dd, h:mm") + ", created " + currentEntry.CreatedDate.ToString("dd MMM yyyy");
+                dispEntryTags.Text = "  |   Tags:  " + currentEntry.Tags;
+            } else
+            {
+                dispBodyText.Text = "No entries saved";
+                dispEntryCountLbl.Text = "-/-";
             }
-            //Update currently displaying entry title, body, and tags
-            dispBodyText.Text = currentEntry.Body;
-            dispTitleLbl.Text = currentEntry.Title + "  |  " + currentEntry.Date.DayOfWeek + ", " + currentEntry.Date.ToString("MMMM dd, h:mm");
-            dispEntryTags.Text = "  |   Tags:  " + currentEntry.Tags;
         }
         
         //Reset text boxes and tag selections for new entry
@@ -476,7 +499,7 @@ namespace JournalProgram
         }
 
         //Convert list to string separated by spaces, used for tags
-        public string listToString (List<string> list)
+        public static string listToString (List<string> list)
         {
             string retStr = String.Empty;
             foreach (string i in list)
@@ -543,6 +566,5 @@ namespace JournalProgram
         {
             dispBtn1_Click(sender, e);
         }
-
     }
 }
