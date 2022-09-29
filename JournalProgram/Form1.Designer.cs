@@ -454,7 +454,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.473684F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.90452F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
             this.tableLayoutPanel1.Controls.Add(this.dispSearchBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispSearchBoxTitle, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispTagTitle, 3, 0);
@@ -471,7 +471,7 @@
             // dispSearchBox
             // 
             this.dispSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dispSearchBox.Location = new System.Drawing.Point(567, 3);
+            this.dispSearchBox.Location = new System.Drawing.Point(566, 3);
             this.dispSearchBox.Name = "dispSearchBox";
             this.dispSearchBox.Size = new System.Drawing.Size(246, 26);
             this.dispSearchBox.TabIndex = 0;
@@ -481,7 +481,7 @@
             // 
             this.dispSearchBoxTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dispSearchBoxTitle.AutoSize = true;
-            this.dispSearchBoxTitle.Location = new System.Drawing.Point(490, 3);
+            this.dispSearchBoxTitle.Location = new System.Drawing.Point(489, 3);
             this.dispSearchBoxTitle.Name = "dispSearchBoxTitle";
             this.dispSearchBoxTitle.Size = new System.Drawing.Size(68, 20);
             this.dispSearchBoxTitle.TabIndex = 1;
@@ -491,7 +491,7 @@
             // 
             this.dispTagTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dispTagTitle.AutoSize = true;
-            this.dispTagTitle.Location = new System.Drawing.Point(819, 3);
+            this.dispTagTitle.Location = new System.Drawing.Point(818, 3);
             this.dispTagTitle.Name = "dispTagTitle";
             this.dispTagTitle.Size = new System.Drawing.Size(52, 20);
             this.dispTagTitle.TabIndex = 2;
@@ -502,9 +502,9 @@
             this.dispTagBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dispTagBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dispTagBox.FormattingEnabled = true;
-            this.dispTagBox.Location = new System.Drawing.Point(886, 3);
+            this.dispTagBox.Location = new System.Drawing.Point(885, 3);
             this.dispTagBox.Name = "dispTagBox";
-            this.dispTagBox.Size = new System.Drawing.Size(234, 28);
+            this.dispTagBox.Size = new System.Drawing.Size(235, 28);
             this.dispTagBox.TabIndex = 3;
             this.dispTagBox.SelectedIndexChanged += new System.EventHandler(this.dispTagBox_SelectedIndexChanged);
             // 
@@ -609,6 +609,7 @@
             this.dispBtn2.TabIndex = 2;
             this.dispBtn2.Text = "Notebooks";
             this.dispBtn2.UseVisualStyleBackColor = true;
+            this.dispBtn2.Click += new System.EventHandler(this.dispBtn2_Click);
             // 
             // tagBtn2
             // 
@@ -766,9 +767,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 664);
+            this.Controls.Add(this.displayPanel);
             this.Controls.Add(this.entryPanel);
             this.Controls.Add(this.tagPanel);
-            this.Controls.Add(this.displayPanel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
