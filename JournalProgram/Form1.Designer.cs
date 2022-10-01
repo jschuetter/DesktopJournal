@@ -41,6 +41,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dispBtn1 = new System.Windows.Forms.Button();
             this.tagBtn1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.entryTagTitle = new System.Windows.Forms.Label();
+            this.entryTagSelect = new System.Windows.Forms.ComboBox();
+            this.addTagBtn = new System.Windows.Forms.Button();
+            this.selectedTagsLbl = new System.Windows.Forms.Label();
+            this.deleteTagsBtn = new System.Windows.Forms.Button();
             this.displayPanel = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
@@ -79,20 +86,16 @@
             this.tagEditTextBox = new System.Windows.Forms.TextBox();
             this.tagEditErrLbl = new System.Windows.Forms.Label();
             this.tagListBox = new System.Windows.Forms.ListBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.entryTagTitle = new System.Windows.Forms.Label();
-            this.entryTagSelect = new System.Windows.Forms.ComboBox();
-            this.addTagBtn = new System.Windows.Forms.Button();
-            this.selectedTagsLbl = new System.Windows.Forms.Label();
-            this.deleteTagsBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.entryDateLbl = new System.Windows.Forms.Label();
             this.bodyTextBox = new System.Windows.Forms.RichTextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.entryNotebookBg = new System.Windows.Forms.PictureBox();
             this.entryPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             this.displayPanel.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -102,91 +105,105 @@
             this.tagPanel.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entryNotebookBg)).BeginInit();
             this.SuspendLayout();
             // 
             // entryPanel
             // 
+            this.entryPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.entryPanel.BackColor = System.Drawing.Color.SlateGray;
             this.entryPanel.ColumnCount = 2;
-            this.entryPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.entryPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.entryPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.entryPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.entryPanel.Controls.Add(this.flowLayoutPanel1, 1, 2);
             this.entryPanel.Controls.Add(this.flowLayoutPanel2, 0, 1);
             this.entryPanel.Controls.Add(this.tableLayoutPanel3, 1, 1);
-            this.entryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.entryPanel.Location = new System.Drawing.Point(0, 0);
             this.entryPanel.Name = "entryPanel";
             this.entryPanel.RowCount = 3;
-            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.entryPanel.Size = new System.Drawing.Size(1130, 664);
+            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.entryPanel.Size = new System.Drawing.Size(1129, 671);
             this.entryPanel.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.closeBtn);
             this.flowLayoutPanel1.Controls.Add(this.encySubmitBtn);
             this.flowLayoutPanel1.Controls.Add(this.outputLbl);
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.entryNbSelect);
             this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(172, 600);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(191, 600);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(955, 61);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(936, 61);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // closeBtn
             // 
             this.closeBtn.AutoSize = true;
             this.closeBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.closeBtn.BackColor = System.Drawing.Color.LightSlateGray;
             this.closeBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.closeBtn.Location = new System.Drawing.Point(893, 3);
+            this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.closeBtn.Location = new System.Drawing.Point(871, 3);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(59, 30);
+            this.closeBtn.Size = new System.Drawing.Size(62, 31);
             this.closeBtn.TabIndex = 1;
             this.closeBtn.Text = "Close";
-            this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // encySubmitBtn
             // 
             this.encySubmitBtn.AutoSize = true;
             this.encySubmitBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.encySubmitBtn.Location = new System.Drawing.Point(777, 3);
+            this.encySubmitBtn.BackColor = System.Drawing.Color.LightSlateGray;
+            this.encySubmitBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.encySubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.encySubmitBtn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.encySubmitBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.encySubmitBtn.Location = new System.Drawing.Point(750, 3);
             this.encySubmitBtn.Name = "encySubmitBtn";
-            this.encySubmitBtn.Size = new System.Drawing.Size(110, 30);
+            this.encySubmitBtn.Size = new System.Drawing.Size(115, 31);
             this.encySubmitBtn.TabIndex = 0;
             this.encySubmitBtn.Text = "Submit Entry";
-            this.encySubmitBtn.UseVisualStyleBackColor = true;
+            this.encySubmitBtn.UseVisualStyleBackColor = false;
             this.encySubmitBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // outputLbl
             // 
             this.outputLbl.AutoSize = true;
             this.outputLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outputLbl.Location = new System.Drawing.Point(771, 0);
+            this.outputLbl.Location = new System.Drawing.Point(744, 0);
             this.outputLbl.Name = "outputLbl";
-            this.outputLbl.Size = new System.Drawing.Size(0, 36);
+            this.outputLbl.Size = new System.Drawing.Size(0, 37);
             this.outputLbl.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(765, 0);
+            this.label1.Location = new System.Drawing.Point(738, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 3;
             // 
             // entryNbSelect
             // 
+            this.entryNbSelect.BackColor = System.Drawing.Color.AliceBlue;
             this.entryNbSelect.FormattingEnabled = true;
-            this.entryNbSelect.Location = new System.Drawing.Point(586, 3);
+            this.entryNbSelect.Location = new System.Drawing.Point(559, 3);
             this.entryNbSelect.Name = "entryNbSelect";
             this.entryNbSelect.Size = new System.Drawing.Size(173, 28);
             this.entryNbSelect.TabIndex = 6;
@@ -195,22 +212,26 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(502, 8);
+            this.label4.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label4.Location = new System.Drawing.Point(469, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(84, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "Notebook";
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.Controls.Add(this.button1);
             this.flowLayoutPanel2.Controls.Add(this.button2);
             this.flowLayoutPanel2.Controls.Add(this.dispBtn1);
             this.flowLayoutPanel2.Controls.Add(this.tagBtn1);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 36);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(163, 558);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(182, 558);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // button1
@@ -279,6 +300,106 @@
             this.tagBtn1.UseVisualStyleBackColor = false;
             this.tagBtn1.Click += new System.EventHandler(this.tagBtn1_Click);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel5, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(191, 36);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.29391F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.706093F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(936, 558);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel5.Controls.Add(this.entryTagTitle);
+            this.flowLayoutPanel5.Controls.Add(this.entryTagSelect);
+            this.flowLayoutPanel5.Controls.Add(this.addTagBtn);
+            this.flowLayoutPanel5.Controls.Add(this.selectedTagsLbl);
+            this.flowLayoutPanel5.Controls.Add(this.deleteTagsBtn);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 518);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(930, 37);
+            this.flowLayoutPanel5.TabIndex = 2;
+            // 
+            // entryTagTitle
+            // 
+            this.entryTagTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.entryTagTitle.AutoSize = true;
+            this.entryTagTitle.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entryTagTitle.ForeColor = System.Drawing.Color.AliceBlue;
+            this.entryTagTitle.Location = new System.Drawing.Point(3, 9);
+            this.entryTagTitle.Name = "entryTagTitle";
+            this.entryTagTitle.Size = new System.Drawing.Size(41, 19);
+            this.entryTagTitle.TabIndex = 0;
+            this.entryTagTitle.Text = "Tags";
+            // 
+            // entryTagSelect
+            // 
+            this.entryTagSelect.BackColor = System.Drawing.Color.AliceBlue;
+            this.entryTagSelect.FormattingEnabled = true;
+            this.entryTagSelect.Location = new System.Drawing.Point(50, 3);
+            this.entryTagSelect.Name = "entryTagSelect";
+            this.entryTagSelect.Size = new System.Drawing.Size(138, 28);
+            this.entryTagSelect.TabIndex = 1;
+            this.entryTagSelect.TabStop = false;
+            // 
+            // addTagBtn
+            // 
+            this.addTagBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.addTagBtn.AutoSize = true;
+            this.addTagBtn.BackColor = System.Drawing.Color.LightSlateGray;
+            this.addTagBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.addTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addTagBtn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addTagBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.addTagBtn.Location = new System.Drawing.Point(194, 3);
+            this.addTagBtn.Name = "addTagBtn";
+            this.addTagBtn.Size = new System.Drawing.Size(83, 31);
+            this.addTagBtn.TabIndex = 2;
+            this.addTagBtn.TabStop = false;
+            this.addTagBtn.Text = "Add Tag";
+            this.addTagBtn.UseVisualStyleBackColor = false;
+            this.addTagBtn.Click += new System.EventHandler(this.addTagBtn_Click);
+            // 
+            // selectedTagsLbl
+            // 
+            this.selectedTagsLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.selectedTagsLbl.AutoSize = true;
+            this.selectedTagsLbl.Location = new System.Drawing.Point(283, 8);
+            this.selectedTagsLbl.Name = "selectedTagsLbl";
+            this.selectedTagsLbl.Size = new System.Drawing.Size(0, 20);
+            this.selectedTagsLbl.TabIndex = 3;
+            // 
+            // deleteTagsBtn
+            // 
+            this.deleteTagsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.deleteTagsBtn.AutoSize = true;
+            this.deleteTagsBtn.BackColor = System.Drawing.Color.LightSlateGray;
+            this.deleteTagsBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.deleteTagsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteTagsBtn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteTagsBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.deleteTagsBtn.Location = new System.Drawing.Point(289, 3);
+            this.deleteTagsBtn.Name = "deleteTagsBtn";
+            this.deleteTagsBtn.Size = new System.Drawing.Size(119, 31);
+            this.deleteTagsBtn.TabIndex = 4;
+            this.deleteTagsBtn.TabStop = false;
+            this.deleteTagsBtn.Text = "Remove Tags";
+            this.deleteTagsBtn.UseVisualStyleBackColor = false;
+            this.deleteTagsBtn.Click += new System.EventHandler(this.deleteTagsBtn_Click);
+            // 
             // displayPanel
             // 
             this.displayPanel.ColumnCount = 2;
@@ -296,7 +417,7 @@
             this.displayPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.displayPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.displayPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.displayPanel.Size = new System.Drawing.Size(1130, 664);
+            this.displayPanel.Size = new System.Drawing.Size(1129, 671);
             this.displayPanel.TabIndex = 1;
             // 
             // flowLayoutPanel3
@@ -308,10 +429,10 @@
             this.flowLayoutPanel3.Controls.Add(this.dispEditEntryBtn);
             this.flowLayoutPanel3.Controls.Add(this.deleteBtn);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(172, 600);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(172, 606);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(955, 61);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(954, 62);
             this.flowLayoutPanel3.TabIndex = 2;
             // 
             // button4
@@ -319,7 +440,7 @@
             this.button4.AutoSize = true;
             this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.Location = new System.Drawing.Point(893, 3);
+            this.button4.Location = new System.Drawing.Point(892, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(59, 30);
             this.button4.TabIndex = 0;
@@ -331,7 +452,7 @@
             // 
             this.nextEntryBtn.AutoSize = true;
             this.nextEntryBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nextEntryBtn.Location = new System.Drawing.Point(795, 3);
+            this.nextEntryBtn.Location = new System.Drawing.Point(794, 3);
             this.nextEntryBtn.Name = "nextEntryBtn";
             this.nextEntryBtn.Size = new System.Drawing.Size(92, 30);
             this.nextEntryBtn.TabIndex = 1;
@@ -343,7 +464,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(789, 0);
+            this.label2.Location = new System.Drawing.Point(788, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 36);
             this.label2.TabIndex = 2;
@@ -351,7 +472,7 @@
             // prevEntryBtn
             // 
             this.prevEntryBtn.AutoSize = true;
-            this.prevEntryBtn.Location = new System.Drawing.Point(663, 3);
+            this.prevEntryBtn.Location = new System.Drawing.Point(662, 3);
             this.prevEntryBtn.Name = "prevEntryBtn";
             this.prevEntryBtn.Size = new System.Drawing.Size(120, 30);
             this.prevEntryBtn.TabIndex = 3;
@@ -362,7 +483,7 @@
             // dispEditEntryBtn
             // 
             this.dispEditEntryBtn.AutoSize = true;
-            this.dispEditEntryBtn.Location = new System.Drawing.Point(569, 3);
+            this.dispEditEntryBtn.Location = new System.Drawing.Point(568, 3);
             this.dispEditEntryBtn.Name = "dispEditEntryBtn";
             this.dispEditEntryBtn.Size = new System.Drawing.Size(88, 30);
             this.dispEditEntryBtn.TabIndex = 5;
@@ -373,7 +494,7 @@
             // deleteBtn
             // 
             this.deleteBtn.AutoSize = true;
-            this.deleteBtn.Location = new System.Drawing.Point(456, 3);
+            this.deleteBtn.Location = new System.Drawing.Point(455, 3);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(107, 30);
             this.deleteBtn.TabIndex = 4;
@@ -385,7 +506,7 @@
             // 
             this.dispEntryCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dispEntryCountLbl.AutoSize = true;
-            this.dispEntryCountLbl.Location = new System.Drawing.Point(135, 597);
+            this.dispEntryCountLbl.Location = new System.Drawing.Point(135, 603);
             this.dispEntryCountLbl.Name = "dispEntryCountLbl";
             this.dispEntryCountLbl.Size = new System.Drawing.Size(31, 20);
             this.dispEntryCountLbl.TabIndex = 6;
@@ -398,7 +519,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.473684F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.90452F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.Controls.Add(this.dispSearchBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispSearchBoxTitle, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispTagTitle, 3, 0);
@@ -409,15 +530,15 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(955, 27);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(954, 27);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // dispSearchBox
             // 
             this.dispSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dispSearchBox.Location = new System.Drawing.Point(448, 3);
+            this.dispSearchBox.Location = new System.Drawing.Point(442, 3);
             this.dispSearchBox.Name = "dispSearchBox";
-            this.dispSearchBox.Size = new System.Drawing.Size(193, 26);
+            this.dispSearchBox.Size = new System.Drawing.Size(190, 26);
             this.dispSearchBox.TabIndex = 0;
             this.dispSearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dispSearchBox_KeyDown);
             // 
@@ -425,7 +546,7 @@
             // 
             this.dispSearchBoxTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dispSearchBoxTitle.AutoSize = true;
-            this.dispSearchBoxTitle.Location = new System.Drawing.Point(387, 0);
+            this.dispSearchBoxTitle.Location = new System.Drawing.Point(382, 0);
             this.dispSearchBoxTitle.Name = "dispSearchBoxTitle";
             this.dispSearchBoxTitle.Size = new System.Drawing.Size(51, 27);
             this.dispSearchBoxTitle.TabIndex = 1;
@@ -435,7 +556,7 @@
             // 
             this.dispTagTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dispTagTitle.AutoSize = true;
-            this.dispTagTitle.Location = new System.Drawing.Point(647, 3);
+            this.dispTagTitle.Location = new System.Drawing.Point(638, 3);
             this.dispTagTitle.Name = "dispTagTitle";
             this.dispTagTitle.Size = new System.Drawing.Size(52, 20);
             this.dispTagTitle.TabIndex = 2;
@@ -446,9 +567,9 @@
             this.dispTagBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dispTagBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dispTagBox.FormattingEnabled = true;
-            this.dispTagBox.Location = new System.Drawing.Point(714, 3);
+            this.dispTagBox.Location = new System.Drawing.Point(705, 3);
             this.dispTagBox.Name = "dispTagBox";
-            this.dispTagBox.Size = new System.Drawing.Size(238, 28);
+            this.dispTagBox.Size = new System.Drawing.Size(246, 28);
             this.dispTagBox.TabIndex = 3;
             this.dispTagBox.SelectedIndexChanged += new System.EventHandler(this.dispTagBox_SelectedIndexChanged);
             // 
@@ -472,7 +593,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(955, 558);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(954, 558);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // dispBodyText
@@ -522,7 +643,7 @@
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 36);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(163, 558);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(163, 564);
             this.flowLayoutPanel4.TabIndex = 3;
             // 
             // homeBtn2
@@ -581,7 +702,7 @@
             this.tagPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tagPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tagPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tagPanel.Size = new System.Drawing.Size(1130, 664);
+            this.tagPanel.Size = new System.Drawing.Size(1129, 671);
             this.tagPanel.TabIndex = 2;
             // 
             // tagPanelTitle
@@ -605,7 +726,7 @@
             this.flowLayoutPanel9.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel9.Location = new System.Drawing.Point(3, 36);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(163, 558);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(163, 564);
             this.flowLayoutPanel9.TabIndex = 3;
             // 
             // button8
@@ -654,15 +775,15 @@
             this.flowLayoutPanel7.Controls.Add(this.tagEditErrLbl);
             this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(172, 600);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(172, 606);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(955, 61);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(954, 62);
             this.flowLayoutPanel7.TabIndex = 5;
             // 
             // tagDeleteBtn
             // 
             this.tagDeleteBtn.AutoSize = true;
-            this.tagDeleteBtn.Location = new System.Drawing.Point(855, 3);
+            this.tagDeleteBtn.Location = new System.Drawing.Point(854, 3);
             this.tagDeleteBtn.Name = "tagDeleteBtn";
             this.tagDeleteBtn.Size = new System.Drawing.Size(97, 30);
             this.tagDeleteBtn.TabIndex = 4;
@@ -673,7 +794,7 @@
             // tagEditBtn
             // 
             this.tagEditBtn.AutoSize = true;
-            this.tagEditBtn.Location = new System.Drawing.Point(738, 3);
+            this.tagEditBtn.Location = new System.Drawing.Point(737, 3);
             this.tagEditBtn.Name = "tagEditBtn";
             this.tagEditBtn.Size = new System.Drawing.Size(111, 30);
             this.tagEditBtn.TabIndex = 5;
@@ -683,7 +804,7 @@
             // 
             // tagEditTextBox
             // 
-            this.tagEditTextBox.Location = new System.Drawing.Point(601, 3);
+            this.tagEditTextBox.Location = new System.Drawing.Point(600, 3);
             this.tagEditTextBox.Name = "tagEditTextBox";
             this.tagEditTextBox.Size = new System.Drawing.Size(131, 26);
             this.tagEditTextBox.TabIndex = 6;
@@ -691,7 +812,7 @@
             // tagEditErrLbl
             // 
             this.tagEditErrLbl.AutoSize = true;
-            this.tagEditErrLbl.Location = new System.Drawing.Point(595, 0);
+            this.tagEditErrLbl.Location = new System.Drawing.Point(594, 0);
             this.tagEditErrLbl.Name = "tagEditErrLbl";
             this.tagEditErrLbl.Size = new System.Drawing.Size(0, 20);
             this.tagEditErrLbl.TabIndex = 7;
@@ -706,105 +827,29 @@
             this.tagListBox.TabIndex = 6;
             this.tagListBox.SelectedIndexChanged += new System.EventHandler(this.tagListBox_SelectedIndexChanged);
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel5, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(172, 36);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.29391F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.706093F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(955, 558);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.entryTagTitle);
-            this.flowLayoutPanel5.Controls.Add(this.entryTagSelect);
-            this.flowLayoutPanel5.Controls.Add(this.addTagBtn);
-            this.flowLayoutPanel5.Controls.Add(this.selectedTagsLbl);
-            this.flowLayoutPanel5.Controls.Add(this.deleteTagsBtn);
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 518);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(949, 37);
-            this.flowLayoutPanel5.TabIndex = 2;
-            // 
-            // entryTagTitle
-            // 
-            this.entryTagTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.entryTagTitle.AutoSize = true;
-            this.entryTagTitle.Location = new System.Drawing.Point(3, 8);
-            this.entryTagTitle.Name = "entryTagTitle";
-            this.entryTagTitle.Size = new System.Drawing.Size(44, 20);
-            this.entryTagTitle.TabIndex = 0;
-            this.entryTagTitle.Text = "Tags";
-            // 
-            // entryTagSelect
-            // 
-            this.entryTagSelect.FormattingEnabled = true;
-            this.entryTagSelect.Location = new System.Drawing.Point(53, 3);
-            this.entryTagSelect.Name = "entryTagSelect";
-            this.entryTagSelect.Size = new System.Drawing.Size(138, 28);
-            this.entryTagSelect.TabIndex = 1;
-            this.entryTagSelect.TabStop = false;
-            // 
-            // addTagBtn
-            // 
-            this.addTagBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addTagBtn.AutoSize = true;
-            this.addTagBtn.Location = new System.Drawing.Point(197, 3);
-            this.addTagBtn.Name = "addTagBtn";
-            this.addTagBtn.Size = new System.Drawing.Size(79, 30);
-            this.addTagBtn.TabIndex = 2;
-            this.addTagBtn.TabStop = false;
-            this.addTagBtn.Text = "Add Tag";
-            this.addTagBtn.UseVisualStyleBackColor = true;
-            this.addTagBtn.Click += new System.EventHandler(this.addTagBtn_Click);
-            // 
-            // selectedTagsLbl
-            // 
-            this.selectedTagsLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.selectedTagsLbl.AutoSize = true;
-            this.selectedTagsLbl.Location = new System.Drawing.Point(282, 8);
-            this.selectedTagsLbl.Name = "selectedTagsLbl";
-            this.selectedTagsLbl.Size = new System.Drawing.Size(0, 20);
-            this.selectedTagsLbl.TabIndex = 3;
-            // 
-            // deleteTagsBtn
-            // 
-            this.deleteTagsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.deleteTagsBtn.AutoSize = true;
-            this.deleteTagsBtn.Location = new System.Drawing.Point(288, 3);
-            this.deleteTagsBtn.Name = "deleteTagsBtn";
-            this.deleteTagsBtn.Size = new System.Drawing.Size(117, 30);
-            this.deleteTagsBtn.TabIndex = 4;
-            this.deleteTagsBtn.TabStop = false;
-            this.deleteTagsBtn.Text = "Remove Tags";
-            this.deleteTagsBtn.UseVisualStyleBackColor = true;
-            this.deleteTagsBtn.Click += new System.EventHandler(this.deleteTagsBtn_Click);
-            // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Controls.Add(this.entryDateLbl);
             this.panel1.Controls.Add(this.bodyTextBox);
             this.panel1.Controls.Add(this.titleTextBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Controls.Add(this.entryNotebookBg);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(949, 509);
+            this.panel1.Size = new System.Drawing.Size(930, 509);
             this.panel1.TabIndex = 3;
             // 
             // entryDateLbl
             // 
+            this.entryDateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.entryDateLbl.BackColor = System.Drawing.Color.White;
+            this.entryDateLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.entryDateLbl.Font = new System.Drawing.Font("League Spartan", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entryDateLbl.Location = new System.Drawing.Point(197, 136);
             this.entryDateLbl.Name = "entryDateLbl";
@@ -815,33 +860,55 @@
             // 
             // bodyTextBox
             // 
-            this.bodyTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bodyTextBox.Location = new System.Drawing.Point(499, 13);
+            this.bodyTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bodyTextBox.Location = new System.Drawing.Point(485, 15);
             this.bodyTextBox.Margin = new System.Windows.Forms.Padding(3, 17, 155, 3);
             this.bodyTextBox.Name = "bodyTextBox";
-            this.bodyTextBox.Size = new System.Drawing.Size(292, 477);
+            this.bodyTextBox.Size = new System.Drawing.Size(290, 481);
             this.bodyTextBox.TabIndex = 0;
             this.bodyTextBox.Text = "";
             this.bodyTextBox.TextChanged += new System.EventHandler(this.bodyTextBox_TextChanged);
             // 
             // titleTextBox
             // 
+            this.titleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.titleTextBox.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleTextBox.Location = new System.Drawing.Point(166, 52);
+            this.titleTextBox.Multiline = true;
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(270, 37);
+            this.titleTextBox.Size = new System.Drawing.Size(270, 65);
             this.titleTextBox.TabIndex = 0;
             this.titleTextBox.Text = "Title";
             this.titleTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // entryNotebookBg
+            // 
+            this.entryNotebookBg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.entryNotebookBg.BackColor = System.Drawing.Color.Transparent;
+            this.entryNotebookBg.Image = global::JournalProgram.Properties.Resources.notebookStock1;
+            this.entryNotebookBg.InitialImage = global::JournalProgram.Properties.Resources.notebookStock1;
+            this.entryNotebookBg.Location = new System.Drawing.Point(-3, -7);
+            this.entryNotebookBg.Name = "entryNotebookBg";
+            this.entryNotebookBg.Size = new System.Drawing.Size(936, 516);
+            this.entryNotebookBg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.entryNotebookBg.TabIndex = 2;
+            this.entryNotebookBg.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 664);
+            this.ClientSize = new System.Drawing.Size(1129, 671);
             this.Controls.Add(this.entryPanel);
             this.Controls.Add(this.tagPanel);
             this.Controls.Add(this.displayPanel);
+            this.MinimumSize = new System.Drawing.Size(1151, 727);
             this.Name = "Form1";
             this.Text = "Journal";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -850,6 +917,9 @@
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
             this.displayPanel.ResumeLayout(false);
             this.displayPanel.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -866,11 +936,9 @@
             this.flowLayoutPanel9.ResumeLayout(false);
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entryNotebookBg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -939,6 +1007,7 @@
         private System.Windows.Forms.Button dispEditEntryBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label entryDateLbl;
+        private System.Windows.Forms.PictureBox entryNotebookBg;
     }
 }
 
