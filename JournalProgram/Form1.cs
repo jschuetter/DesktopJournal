@@ -436,6 +436,7 @@ namespace JournalProgram
             titleTextBox.Text = "New Entry";
             bodyTextBox.Text = String.Empty;
             selectedTagsLbl.Text = String.Empty;
+            entryDateLbl.Text = DateTime.Now.ToString("dddd,\nd MMMM yyyy");
             updateTags();
             Manager.currentEntryTags.Clear();
         }
