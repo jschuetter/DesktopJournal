@@ -421,8 +421,10 @@ namespace JournalProgram
                 }
                 //Update currently displaying entry title, body, and tags
                 dispBodyText.Text = currentEntry.Body;
-                dispTitleLbl.Text = currentEntry.Title + "  |  " + currentEntry.Date.DayOfWeek + ", " + currentEntry.Date.ToString("MMMM dd, h:mm") + ", created " + currentEntry.CreatedDate.ToString("dd MMM yyyy");
-                dispEntryTags.Text = "  |   Tags:  " + currentEntry.Tags;
+                dispTitleLbl.Text = currentEntry.Title;
+                dispEntryData.Text = currentEntry.Date.DayOfWeek + ", " + currentEntry.Date.ToString("MMMM dd, h:mm") + "\n" +
+                    "Created " + currentEntry.CreatedDate.ToString("dd MMM yyyy") + "\n" + "\n" + 
+                    "Tags:  " + currentEntry.Tags;
             } else
             {
                 dispBodyText.Text = "No entries saved";
