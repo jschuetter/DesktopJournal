@@ -113,6 +113,10 @@ namespace JournalProgram
                 newBtn.Size = new Size(400, 100);
                 newBtn.TextAlign = ContentAlignment.MiddleLeft;
                 newBtn.Padding = new Padding(24, 0, 0, 0);
+                newBtn.Font = new Font("Avenir LT Std 55 Roman", 8);
+                newBtn.BackColor = Color.LightSlateGray;
+                newBtn.ForeColor = Color.AliceBlue;
+                newBtn.FlatStyle = FlatStyle.Flat;
                 newBtn.Click += resultClick;
                 resultsPanel.Controls.Add(newBtn);
                 Debug.WriteLine("Button added");

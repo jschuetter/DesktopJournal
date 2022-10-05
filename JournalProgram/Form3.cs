@@ -33,8 +33,10 @@ namespace JournalProgram
             if(bodyTextBox.Text != String.Empty)
             {
                 Entry editedEntry = new Entry { Title = titleTextBox.Text, Body = bodyTextBox.Text, Date = DateTime.Now, CreatedDate = currentResult.CreatedDate, 
-                    Tags = Form1.listToString(Manager.currentEntryTags) };
+                    Tags = Form1.listToString(Manager.currentEntryTags), Book =  Manager.notebookList[entryNbSelect.SelectedIndex] };
+                Manager.currentNb = entryNbSelect.SelectedIndex;
                 Manager.entryCSV[entryIndex] = editedEntry;
+                Debug.WriteLine("Entry index " + entryIndex.ToString());    
                 Manager.rewriteCsv();
                 Debug.WriteLine("CSV rewritten");
                 Manager.f.Activate();
@@ -46,9 +48,9 @@ namespace JournalProgram
         {
             //Entry currentResult = new Entry();
             //int entryIndex;
-            if (Manager.displayMode == "default")
+            /*if (Manager.displayMode == "default")
             {
-                currentResult = Manager.entryCSV[Manager.dispInc];
+                currentResult = Manager.entryResults[Manager.dispInc];
                 entryIndex = Manager.dispInc;
             }
             else
@@ -65,6 +67,19 @@ namespace JournalProgram
                         entryIndex = i;
                         break;
                     }
+                }
+            }*/
+            currentResult = Manager.entryResults[Manager.dispInc];
+            //Find entry currently selected in overall list of entries and display on main window
+            for (int i = 0; i < Manager.entryCSV.Count(); i++)
+            {
+                if (Manager.entryCSV[i].Body == currentResult.Body && Manager.entryCSV[i].Title == currentResult.Title)
+                {
+                    //Debug.WriteLine("Entry match found");
+                    //Manager.displayMode = "default";
+                    //Manager.dispInc = i;
+                    entryIndex = i;
+                    break;
                 }
             }
 
@@ -85,7 +100,26 @@ namespace JournalProgram
             {
                 entryTagSelect.Items.Add(tag);
             }
-            
+
+            //Get all notebooks & add to dropdown menu
+            Debug.WriteLine("Retrieving notebooks");
+            List<Entry> entries = Manager.getCsvEntries();
+            if (entries.Count == 0) Manager.notebookList.Add("Default");
+            foreach (Entry e in entries)
+            {
+                if (!Manager.notebookList.Contains(e.Book))
+                {
+                    Manager.notebookList.Add(e.Book);
+                    Debug.WriteLine("Added notebook " + e.Book);
+                }
+            }
+            //Update notebook dropdown on new entry panel
+            entryNbSelect.Items.Clear();
+            foreach (string nb in Manager.notebookList)
+            {
+                entryNbSelect.Items.Add(nb);
+            }
+            entryNbSelect.Text = currentResult.Book;
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

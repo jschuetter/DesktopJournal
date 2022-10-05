@@ -22,8 +22,15 @@ namespace JournalProgram
             tagPanel.SendToBack();
             displayPanel.SendToBack();
             entryPanel.BringToFront();
+            homeScrnTableLayoutPanel.BringToFront();
             
             dispEntryCountLbl.Text = "-/-"; //Initialize displayPanel labels
+
+            //Update notebook lists from saved entries
+            entryNbSelect.Items.Clear();
+            entryNbSelect.Items.Add("Default");
+            initNotebooks();
+            updateNotebooks();
 
             updateEntryPanel(); //Initialize new entry panel for startup
 
@@ -57,7 +64,7 @@ namespace JournalProgram
             this.Activated += Form1_Activated;
 
             Manager.currentQuery = String.Empty;    //Ensure query variable is clear
-            
+
         }
 
         //Update panels whenever focus changes to main window
@@ -67,11 +74,12 @@ namespace JournalProgram
             try
             {
                 updateDisplayPanel();
-                Debug.WriteLine("Updated display panel on new window focus");
+                updateNotebooks();
+                Debug.WriteLine("Updated notebooks and display panel on new window focus");
             } catch (Exception ex)
             {
                 Debug.Write(ex.Message + "\n");
-                Debug.WriteLine("Could not update display panel on new window focus");
+                Debug.WriteLine("Could not update display panel or notebooks on new window focus");
             }
         }
 
@@ -139,6 +147,20 @@ namespace JournalProgram
             tagListBox.BringToFront();*/
         }
 
+        //Show home panel
+        private void homeBtn2_Click(object sender, EventArgs e)
+        {
+            updateNotebooks();
+            homeScrnTableLayoutPanel.BringToFront();
+        }
+
+        //Show notebook editing window
+        private void nbEditBtn_Click(object sender, EventArgs e)
+        {
+            Form4 nbEditWindow = new Form4();
+            nbEditWindow.Show();
+        }
+
         #endregion
 
         #region newEntry-btnFunctions
@@ -151,9 +173,10 @@ namespace JournalProgram
             {
                 //Create new entry, add to local entry list, and write to .csv file
                 Entry newEntry = new Entry { Id = Manager.entryCSV.Count + 1, Title = titleTextBox.Text, CreatedDate = System.DateTime.Now, Date = System.DateTime.Now, 
-                    Body = bodyTextBox.Text, Tags = listToString(Manager.currentEntryTags)};
+                    Body = bodyTextBox.Text, Tags = listToString(Manager.currentEntryTags), Book = entryNbSelect.Text };
                 Manager.entryCSV.Add(newEntry);
                 Manager.writeEntryToCsv(newEntry);
+                Manager.currentNb = entryNbSelect.SelectedIndex;
 
                 //Update entryCSV list
                 try
@@ -352,6 +375,27 @@ namespace JournalProgram
 
         #endregion
 
+        #region home-btnFunctions
+
+        private void NewNbBtn_Click(object sender, EventArgs e)
+        {
+            Manager.notebookList.Add("New Notebook " + (Manager.notebookList.Count() - 1).ToString());
+            Manager.nbSelected = Manager.notebookList.Count() - 1;
+            Form4 nbEditWindow = new Form4();
+            nbEditWindow.Show();
+        }
+
+        private void NewBtn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            Manager.currentNb = Int32.Parse(btn.Name);
+            Manager.dispInc = 0;
+            displayPanel.BringToFront();
+            updateDisplayPanel();
+        }
+
+        #endregion
+
         #region update-functions
         //Functions to update labels on panel switch
         private void updateDisplayPanel()
@@ -375,10 +419,30 @@ namespace JournalProgram
                 {
                     default:
                         Manager.entryResults.Clear();
-                        Manager.entryResults = Manager.entryCSV;
-                        dispEntryCountLbl.Text = (Manager.dispInc + 1).ToString() + "/" + Manager.entryCSV.Count();
-                        currentEntry = Manager.entryCSV[Manager.dispInc];
-                        dispIdLbl.Text = "Displaying: all entries";
+                        //Manager.entryResults = Manager.entryCSV;    //Displays all entries
+                        Debug.WriteLine("Current Notebook: " + Manager.notebookList[Manager.currentNb]);
+                        foreach (Entry e in Manager.entryCSV)
+                        {
+                            if (e.Book == Manager.notebookList[Manager.currentNb]) Manager.entryResults.Add(e);
+                        }
+                        //Show default notebook if current notebook is empty
+                        /*if (Manager.entryResults.Count == 0)
+                        {
+                            Debug.WriteLine("Notebook was empty, showing default");
+                            Manager.currentNb = 0;
+                            foreach (Entry e in Manager.entryCSV)
+                            {
+                                if (e.Book == Manager.notebookList[Manager.currentNb]) Manager.entryResults.Add(e);
+                            }
+                        }*/
+                        //Show notebook is empty if no entries return
+                        if (Manager.entryResults.Count == 0)
+                        {
+                            Manager.entryResults.Add(new Entry { Body = "Notebook was empty" });
+                        }
+                        dispEntryCountLbl.Text = (Manager.dispInc + 1).ToString() + "/" + Manager.entryResults.Count();
+                        currentEntry = Manager.entryResults[Manager.dispInc];
+                        dispIdLbl.Text = "Displaying: all entries in " + Manager.notebookList[Manager.currentNb];
                         dispSearchBox.Text = String.Empty;
                         Manager.currentQuery = String.Empty;
                         break;
@@ -439,6 +503,7 @@ namespace JournalProgram
             bodyTextBox.Text = String.Empty;
             selectedTagsLbl.Text = String.Empty;
             entryDateLbl.Text = DateTime.Now.ToString("dddd,\nd MMMM yyyy");
+            entryNbSelect.SelectedIndex = Manager.currentNb;
             updateTags();
             Manager.currentEntryTags.Clear();
         }
@@ -494,12 +559,113 @@ namespace JournalProgram
             }
         }
 
+        //Update notebook dropdowns
+        public void initNotebooks()
+        {
+            Debug.WriteLine("Retrieving notebooks");
+            Manager.notebookList.Clear();
+            List<Entry> entries = Manager.getCsvEntries();
+            Manager.notebookList.Add("Default");
+            foreach (Entry e in entries)
+            {
+                if (!Manager.notebookList.Contains(e.Book))
+                {
+                    Manager.notebookList.Add(e.Book);
+                    Debug.WriteLine("Added notebook " + e.Book);
+                }
+            }
+        }
+        public void updateNotebooks()
+        {
+            Debug.WriteLine("Updating notebook dropdowns");
+            //initNotebooks();
+
+            //Update notebook dropdown on new entry panel
+            entryNbSelect.Items.Clear();
+            foreach (string nb in Manager.notebookList)
+            {
+                entryNbSelect.Items.Add(nb);
+            }
+
+            //Add notebooks to home menu
+            homeMenuNotebookFlow.Controls.Clear();
+            //Debug.WriteLine("Adding notebooks");
+            for (int i = 0; i < Manager.notebookList.Count; i++)
+            {
+                Button newBtn = new Button();
+                newBtn.Name = i.ToString();
+                newBtn.TextAlign = ContentAlignment.TopLeft;
+                string btnName = "              " + Manager.notebookList[i];
+
+                //Wrap text to fit background image
+                for (int j = 1; j * 28 <= btnName.Length+1; j++)
+                {
+                    int n = j * 28;
+                    while (true)
+                    {
+                        try
+                        {
+                            if (btnName[n] == ' ')
+                            {
+                                Debug.WriteLine("Space found at index " + n.ToString());
+                                btnName = btnName.Insert(n, "\n             ");
+                                break;
+                            }
+                            else n--;
+                        } catch (Exception ex)
+                        {
+                            Debug.WriteLine(ex.Message);
+                            Debug.WriteLine("String was too short to wrap");
+                            break;
+                        }
+                        
+                    }
+                }
+
+                newBtn.Text = "\n\n\n\n\n\n" + btnName;
+                newBtn.Font = new Font("League Spartan", 8);
+                if (Manager.notebookList[i] == "Default")
+                {
+                    newBtn.BackgroundImage = Properties.Resources.notebookClosed;
+                } else
+                {
+                    Random rand = new Random();
+                    int randInt = rand.Next(1, 5);
+                    switch (randInt)
+                    {
+                        default:
+                            newBtn.BackgroundImage = Properties.Resources.notebookClosed;
+                            break;
+                    }
+                }
+                newBtn.Size = new Size(175,252);
+                newBtn.BackgroundImageLayout = ImageLayout.Zoom;
+                newBtn.FlatStyle = FlatStyle.Flat;
+                newBtn.FlatAppearance.BorderSize = 0;
+                //Set button position?
+                newBtn.Click += NewBtn_Click;
+                homeMenuNotebookFlow.Controls.Add(newBtn);
+                Debug.WriteLine("Completed loop " + i.ToString());
+            }
+            //Add new notebook button at end of flow panel
+            Button newNbBtn = new Button();
+            newNbBtn.Name = "newNbBtn";
+            newNbBtn.Font = new Font("League Spartan", 10);
+            newNbBtn.BackColor = Color.Transparent;
+            newNbBtn.ForeColor = Color.AliceBlue;
+            newNbBtn.FlatStyle = FlatStyle.Flat;
+            newNbBtn.FlatAppearance.BorderSize = 0;
+            newNbBtn.BackgroundImage = Properties.Resources.plusIconDarkened;
+            newNbBtn.Size = new Size(75, 75);
+            newNbBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            newNbBtn.Anchor = ((System.Windows.Forms.AnchorStyles.Left));
+            //Set position?
+            newNbBtn.Click += NewNbBtn_Click;
+            homeMenuNotebookFlow.Controls.Add(newNbBtn);
+        }
+
         #endregion
 
-        private void homeBtn2_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         //Convert list to string separated by spaces, used for tags
         public static string listToString (List<string> list)
@@ -569,5 +735,11 @@ namespace JournalProgram
         {
             dispBtn1_Click(sender, e);
         }
+
+        private void homeNewEntryBtn_Click(object sender, EventArgs e)
+        {
+            entryBtn2_Click(sender, e);
+        }
+
     }
 }

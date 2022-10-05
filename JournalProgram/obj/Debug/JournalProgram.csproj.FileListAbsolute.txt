@@ -28,3 +28,4 @@ C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\bin\Debug\System.Threa
 C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\obj\Debug\JournalProgram.csproj.CopyComplete
 C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\obj\Debug\JournalProgram.Form2.resources
 C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\obj\Debug\JournalProgram.Form3.resources
+C:\Users\Jayb3\Source\Repos\JournalProgram\JournalProgram\obj\Debug\JournalProgram.Form4.resources

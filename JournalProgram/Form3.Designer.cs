@@ -64,8 +64,8 @@
             this.entryPanel.Name = "entryPanel";
             this.entryPanel.RowCount = 3;
             this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.02238F));
+            this.entryPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.12687F));
             this.entryPanel.Size = new System.Drawing.Size(960, 536);
             this.entryPanel.TabIndex = 1;
             // 
@@ -87,10 +87,10 @@
             this.flowLayoutPanel1.Controls.Add(this.entryNbSelect);
             this.flowLayoutPanel1.Controls.Add(this.label4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 484);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 473);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(954, 49);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(954, 60);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // closeBtn
@@ -98,9 +98,12 @@
             this.closeBtn.AutoSize = true;
             this.closeBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.closeBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.closeBtn.Location = new System.Drawing.Point(883, 3);
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.closeBtn.Location = new System.Drawing.Point(881, 3);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(68, 30);
+            this.closeBtn.Size = new System.Drawing.Size(70, 31);
             this.closeBtn.TabIndex = 0;
             this.closeBtn.Text = "Cancel";
             this.closeBtn.UseVisualStyleBackColor = true;
@@ -110,9 +113,12 @@
             // 
             this.encySubmitBtn.AutoSize = true;
             this.encySubmitBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.encySubmitBtn.Location = new System.Drawing.Point(754, 3);
+            this.encySubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.encySubmitBtn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.encySubmitBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.encySubmitBtn.Location = new System.Drawing.Point(753, 3);
             this.encySubmitBtn.Name = "encySubmitBtn";
-            this.encySubmitBtn.Size = new System.Drawing.Size(123, 30);
+            this.encySubmitBtn.Size = new System.Drawing.Size(122, 31);
             this.encySubmitBtn.TabIndex = 1;
             this.encySubmitBtn.Text = "Save Changes";
             this.encySubmitBtn.UseVisualStyleBackColor = true;
@@ -122,23 +128,24 @@
             // 
             this.outputLbl.AutoSize = true;
             this.outputLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outputLbl.Location = new System.Drawing.Point(748, 0);
+            this.outputLbl.Location = new System.Drawing.Point(747, 0);
             this.outputLbl.Name = "outputLbl";
-            this.outputLbl.Size = new System.Drawing.Size(0, 36);
+            this.outputLbl.Size = new System.Drawing.Size(0, 37);
             this.outputLbl.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(742, 0);
+            this.label1.Location = new System.Drawing.Point(741, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 3;
             // 
             // entryNbSelect
             // 
+            this.entryNbSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.entryNbSelect.FormattingEnabled = true;
-            this.entryNbSelect.Location = new System.Drawing.Point(563, 3);
+            this.entryNbSelect.Location = new System.Drawing.Point(562, 3);
             this.entryNbSelect.Name = "entryNbSelect";
             this.entryNbSelect.Size = new System.Drawing.Size(173, 28);
             this.entryNbSelect.TabIndex = 6;
@@ -147,9 +154,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(479, 8);
+            this.label4.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label4.Location = new System.Drawing.Point(472, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(84, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "Notebook";
             // 
@@ -164,10 +173,10 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 29);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.29391F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.706093F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.72603F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.27397F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(954, 449);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(954, 438);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // bodyTextBox
@@ -175,7 +184,7 @@
             this.bodyTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bodyTextBox.Location = new System.Drawing.Point(3, 3);
             this.bodyTextBox.Name = "bodyTextBox";
-            this.bodyTextBox.Size = new System.Drawing.Size(948, 408);
+            this.bodyTextBox.Size = new System.Drawing.Size(948, 387);
             this.bodyTextBox.TabIndex = 1;
             this.bodyTextBox.Text = "";
             // 
@@ -187,25 +196,27 @@
             this.flowLayoutPanel5.Controls.Add(this.selectedTagsLbl);
             this.flowLayoutPanel5.Controls.Add(this.deleteTagsBtn);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 417);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 396);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(948, 29);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(948, 39);
             this.flowLayoutPanel5.TabIndex = 2;
             // 
             // entryTagTitle
             // 
             this.entryTagTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.entryTagTitle.AutoSize = true;
-            this.entryTagTitle.Location = new System.Drawing.Point(3, 8);
+            this.entryTagTitle.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entryTagTitle.ForeColor = System.Drawing.Color.AliceBlue;
+            this.entryTagTitle.Location = new System.Drawing.Point(3, 9);
             this.entryTagTitle.Name = "entryTagTitle";
-            this.entryTagTitle.Size = new System.Drawing.Size(44, 20);
+            this.entryTagTitle.Size = new System.Drawing.Size(41, 19);
             this.entryTagTitle.TabIndex = 0;
             this.entryTagTitle.Text = "Tags";
             // 
             // entryTagSelect
             // 
             this.entryTagSelect.FormattingEnabled = true;
-            this.entryTagSelect.Location = new System.Drawing.Point(53, 3);
+            this.entryTagSelect.Location = new System.Drawing.Point(50, 3);
             this.entryTagSelect.Name = "entryTagSelect";
             this.entryTagSelect.Size = new System.Drawing.Size(138, 28);
             this.entryTagSelect.TabIndex = 1;
@@ -214,9 +225,12 @@
             // 
             this.addTagBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.addTagBtn.AutoSize = true;
-            this.addTagBtn.Location = new System.Drawing.Point(197, 3);
+            this.addTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addTagBtn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addTagBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.addTagBtn.Location = new System.Drawing.Point(194, 3);
             this.addTagBtn.Name = "addTagBtn";
-            this.addTagBtn.Size = new System.Drawing.Size(79, 30);
+            this.addTagBtn.Size = new System.Drawing.Size(97, 31);
             this.addTagBtn.TabIndex = 2;
             this.addTagBtn.Text = "Add Tag";
             this.addTagBtn.UseVisualStyleBackColor = true;
@@ -226,7 +240,7 @@
             // 
             this.selectedTagsLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.selectedTagsLbl.AutoSize = true;
-            this.selectedTagsLbl.Location = new System.Drawing.Point(282, 8);
+            this.selectedTagsLbl.Location = new System.Drawing.Point(297, 8);
             this.selectedTagsLbl.Name = "selectedTagsLbl";
             this.selectedTagsLbl.Size = new System.Drawing.Size(0, 20);
             this.selectedTagsLbl.TabIndex = 3;
@@ -235,9 +249,12 @@
             // 
             this.deleteTagsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.deleteTagsBtn.AutoSize = true;
-            this.deleteTagsBtn.Location = new System.Drawing.Point(288, 3);
+            this.deleteTagsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteTagsBtn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteTagsBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.deleteTagsBtn.Location = new System.Drawing.Point(303, 3);
             this.deleteTagsBtn.Name = "deleteTagsBtn";
-            this.deleteTagsBtn.Size = new System.Drawing.Size(117, 30);
+            this.deleteTagsBtn.Size = new System.Drawing.Size(141, 31);
             this.deleteTagsBtn.TabIndex = 4;
             this.deleteTagsBtn.Text = "Remove Tags";
             this.deleteTagsBtn.UseVisualStyleBackColor = true;
@@ -247,10 +264,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(960, 536);
             this.Controls.Add(this.entryPanel);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Edit Entry";
             this.entryPanel.ResumeLayout(false);
             this.entryPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

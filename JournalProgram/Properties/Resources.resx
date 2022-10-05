@@ -118,10 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="notebookStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notebookStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plusIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plusIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notebookStock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notebookStock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notebookStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notebookStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plusIconDarkened" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plusIconDarkened.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notebookClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notebookClosed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

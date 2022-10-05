@@ -63,6 +63,16 @@ namespace JournalProgram.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notebookClosed {
+            get {
+                object obj = ResourceManager.GetObject("notebookClosed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap notebookStock {
             get {
                 object obj = ResourceManager.GetObject("notebookStock", resourceCulture);
@@ -76,6 +86,26 @@ namespace JournalProgram.Properties {
         internal static System.Drawing.Bitmap notebookStock1 {
             get {
                 object obj = ResourceManager.GetObject("notebookStock1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plusIcon {
+            get {
+                object obj = ResourceManager.GetObject("plusIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plusIconDarkened {
+            get {
+                object obj = ResourceManager.GetObject("plusIconDarkened", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

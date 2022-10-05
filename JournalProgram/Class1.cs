@@ -39,6 +39,10 @@ namespace JournalProgram
         public static List<Result> tagResults = new List<Result>();
         public static string currentQuery;  //Store current search query globally
 
+        public static List<string> notebookList = new List<string>();  //Store names of all notebooks in use
+        public static int nbSelected = 0;  //Allows selection of particular notebook in notebook edit window from other scripts
+        public static int currentNb = 0;  //Stores index of notebook currently being written to / displayed
+
         public static Form f = new Form();  //Main display window (to allow activation from other forms)
 
         //Write headers into CSV file
@@ -277,6 +281,7 @@ namespace JournalProgram
         public DateTime CreatedDate {get; set;}
         public string Body { get; set; }
         public string Tags { get; set; }
+        public string Book { get; set; }
     }
 
     //Create class for search results
@@ -285,4 +290,5 @@ namespace JournalProgram
         public Entry Entry { get; set; }
         public string Context { get; set; }
     }
+
 }
