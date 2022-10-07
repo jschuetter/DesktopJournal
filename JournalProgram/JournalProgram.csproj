@@ -148,5 +148,17 @@
   <ItemGroup>
     <None Include="Resources\notebookClosed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebookClosed-Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebookCovers-Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebookClosed-Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebookClosed-Red.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

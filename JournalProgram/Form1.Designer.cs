@@ -624,7 +624,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.10614F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.90452F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 269F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270F));
             this.tableLayoutPanel1.Controls.Add(this.dispSearchBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispTagTitle, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispTagBox, 4, 0);
@@ -641,9 +641,9 @@
             // dispSearchBox
             // 
             this.dispSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dispSearchBox.Location = new System.Drawing.Point(408, 3);
+            this.dispSearchBox.Location = new System.Drawing.Point(407, 3);
             this.dispSearchBox.Name = "dispSearchBox";
-            this.dispSearchBox.Size = new System.Drawing.Size(175, 26);
+            this.dispSearchBox.Size = new System.Drawing.Size(174, 26);
             this.dispSearchBox.TabIndex = 0;
             this.dispSearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dispSearchBox_KeyDown);
             // 
@@ -653,7 +653,7 @@
             this.dispTagTitle.AutoSize = true;
             this.dispTagTitle.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dispTagTitle.ForeColor = System.Drawing.Color.AliceBlue;
-            this.dispTagTitle.Location = new System.Drawing.Point(589, 8);
+            this.dispTagTitle.Location = new System.Drawing.Point(587, 8);
             this.dispTagTitle.Name = "dispTagTitle";
             this.dispTagTitle.Size = new System.Drawing.Size(49, 19);
             this.dispTagTitle.TabIndex = 2;
@@ -664,9 +664,9 @@
             this.dispTagBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dispTagBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dispTagBox.FormattingEnabled = true;
-            this.dispTagBox.Location = new System.Drawing.Point(656, 3);
+            this.dispTagBox.Location = new System.Drawing.Point(654, 3);
             this.dispTagBox.Name = "dispTagBox";
-            this.dispTagBox.Size = new System.Drawing.Size(264, 28);
+            this.dispTagBox.Size = new System.Drawing.Size(266, 28);
             this.dispTagBox.TabIndex = 3;
             this.dispTagBox.SelectedIndexChanged += new System.EventHandler(this.dispTagBox_SelectedIndexChanged);
             // 
@@ -688,7 +688,7 @@
             this.dispSearchBoxTitle.ForeColor = System.Drawing.Color.AliceBlue;
             this.dispSearchBoxTitle.Location = new System.Drawing.Point(337, 5);
             this.dispSearchBoxTitle.Name = "dispSearchBoxTitle";
-            this.dispSearchBoxTitle.Size = new System.Drawing.Size(65, 24);
+            this.dispSearchBoxTitle.Size = new System.Drawing.Size(64, 24);
             this.dispSearchBoxTitle.TabIndex = 1;
             this.dispSearchBoxTitle.Text = "Search:   ";
             // 

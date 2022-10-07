@@ -630,11 +630,23 @@ namespace JournalProgram
                 } else
                 {
                     Random rand = new Random();
-                    int randInt = rand.Next(1, 5);
+                    int randInt = rand.Next(1, 4);
                     switch (randInt)
                     {
                         default:
                             newBtn.BackgroundImage = Properties.Resources.notebookClosed;
+                            break;
+                        case 1:
+                            newBtn.BackgroundImage = Properties.Resources.notebookClosed_Red;
+                            break;
+                        case 2:
+                            newBtn.BackgroundImage = Properties.Resources.notebookClosed_Yellow;
+                            break;
+                        case 3:
+                            newBtn.BackgroundImage = Properties.Resources.notebookClosed_Green;
+                            break;
+                        case 4:
+                            newBtn.BackgroundImage = Properties.Resources.notebookClosed_Blue;
                             break;
                     }
                 }
