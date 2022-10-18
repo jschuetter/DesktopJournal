@@ -52,6 +52,7 @@
             this.entryDateLbl = new System.Windows.Forms.Label();
             this.bodyTextBox = new System.Windows.Forms.RichTextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.entryNotebookBg = new System.Windows.Forms.PictureBox();
             this.displayPanel = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
@@ -72,6 +73,10 @@
             this.entryBtn2 = new System.Windows.Forms.Button();
             this.dispBtn2 = new System.Windows.Forms.Button();
             this.tagBtn2 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dispTitleLbl = new System.Windows.Forms.Label();
+            this.dispBodyText = new System.Windows.Forms.Label();
+            this.dispEntryData = new System.Windows.Forms.Label();
             this.tagPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tagPanelTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
@@ -87,27 +92,24 @@
             this.tagListBox = new System.Windows.Forms.ListBox();
             this.homeScrnTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.homeMenuNotebookFlow = new System.Windows.Forms.FlowLayoutPanel();
+            this.button6 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.homeNewEntryBtn = new System.Windows.Forms.Button();
             this.nbEditBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.appTitleLbl = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dispTitleLbl = new System.Windows.Forms.Label();
-            this.dispBodyText = new System.Windows.Forms.Label();
-            this.dispEntryData = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.homeNewEntryBtn = new System.Windows.Forms.Button();
-            this.entryNotebookBg = new System.Windows.Forms.PictureBox();
             this.entryPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entryNotebookBg)).BeginInit();
             this.displayPanel.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tagPanel.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
@@ -115,8 +117,6 @@
             this.homeMenuNotebookFlow.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.entryNotebookBg)).BeginInit();
             this.SuspendLayout();
             // 
             // entryPanel
@@ -470,6 +470,21 @@
             this.titleTextBox.Text = "Title";
             this.titleTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // entryNotebookBg
+            // 
+            this.entryNotebookBg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.entryNotebookBg.BackColor = System.Drawing.Color.Transparent;
+            this.entryNotebookBg.Image = global::JournalProgram.Properties.Resources.notebookStock1;
+            this.entryNotebookBg.InitialImage = global::JournalProgram.Properties.Resources.notebookStock1;
+            this.entryNotebookBg.Location = new System.Drawing.Point(-3, -7);
+            this.entryNotebookBg.Name = "entryNotebookBg";
+            this.entryNotebookBg.Size = new System.Drawing.Size(936, 516);
+            this.entryNotebookBg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.entryNotebookBg.TabIndex = 2;
+            this.entryNotebookBg.TabStop = false;
+            // 
             // displayPanel
             // 
             this.displayPanel.BackColor = System.Drawing.Color.SlateGray;
@@ -610,7 +625,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.10614F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.90452F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 276F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 277F));
             this.tableLayoutPanel1.Controls.Add(this.dispSearchBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispTagTitle, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.dispTagBox, 4, 0);
@@ -629,7 +644,7 @@
             this.dispSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dispSearchBox.Location = new System.Drawing.Point(403, 3);
             this.dispSearchBox.Name = "dispSearchBox";
-            this.dispSearchBox.Size = new System.Drawing.Size(173, 26);
+            this.dispSearchBox.Size = new System.Drawing.Size(172, 26);
             this.dispSearchBox.TabIndex = 0;
             this.dispSearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dispSearchBox_KeyDown);
             // 
@@ -639,7 +654,7 @@
             this.dispTagTitle.AutoSize = true;
             this.dispTagTitle.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dispTagTitle.ForeColor = System.Drawing.Color.AliceBlue;
-            this.dispTagTitle.Location = new System.Drawing.Point(582, 8);
+            this.dispTagTitle.Location = new System.Drawing.Point(581, 8);
             this.dispTagTitle.Name = "dispTagTitle";
             this.dispTagTitle.Size = new System.Drawing.Size(49, 19);
             this.dispTagTitle.TabIndex = 2;
@@ -650,9 +665,9 @@
             this.dispTagBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dispTagBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dispTagBox.FormattingEnabled = true;
-            this.dispTagBox.Location = new System.Drawing.Point(649, 3);
+            this.dispTagBox.Location = new System.Drawing.Point(648, 3);
             this.dispTagBox.Name = "dispTagBox";
-            this.dispTagBox.Size = new System.Drawing.Size(271, 28);
+            this.dispTagBox.Size = new System.Drawing.Size(272, 28);
             this.dispTagBox.TabIndex = 3;
             this.dispTagBox.SelectedIndexChanged += new System.EventHandler(this.dispTagBox_SelectedIndexChanged);
             // 
@@ -750,6 +765,51 @@
             this.tagBtn2.Text = "Tags";
             this.tagBtn2.UseVisualStyleBackColor = false;
             this.tagBtn2.Click += new System.EventHandler(this.tagBtn2_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::JournalProgram.Properties.Resources.notebookStock1;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.dispTitleLbl);
+            this.panel2.Controls.Add(this.dispBodyText);
+            this.panel2.Controls.Add(this.dispEntryData);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(203, 44);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(923, 564);
+            this.panel2.TabIndex = 8;
+            // 
+            // dispTitleLbl
+            // 
+            this.dispTitleLbl.BackColor = System.Drawing.Color.Transparent;
+            this.dispTitleLbl.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dispTitleLbl.Location = new System.Drawing.Point(122, 48);
+            this.dispTitleLbl.Name = "dispTitleLbl";
+            this.dispTitleLbl.Size = new System.Drawing.Size(299, 81);
+            this.dispTitleLbl.TabIndex = 4;
+            this.dispTitleLbl.Text = "title";
+            this.dispTitleLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // dispBodyText
+            // 
+            this.dispBodyText.BackColor = System.Drawing.Color.Transparent;
+            this.dispBodyText.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dispBodyText.Location = new System.Drawing.Point(488, 21);
+            this.dispBodyText.Name = "dispBodyText";
+            this.dispBodyText.Size = new System.Drawing.Size(311, 515);
+            this.dispBodyText.TabIndex = 5;
+            this.dispBodyText.Text = "entry text";
+            // 
+            // dispEntryData
+            // 
+            this.dispEntryData.BackColor = System.Drawing.Color.Transparent;
+            this.dispEntryData.Font = new System.Drawing.Font("League Spartan", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dispEntryData.Location = new System.Drawing.Point(122, 141);
+            this.dispEntryData.Name = "dispEntryData";
+            this.dispEntryData.Size = new System.Drawing.Size(290, 395);
+            this.dispEntryData.TabIndex = 5;
+            this.dispEntryData.Text = "entry data";
+            this.dispEntryData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tagPanel
             // 
@@ -953,6 +1013,22 @@
             this.homeMenuNotebookFlow.TabIndex = 0;
             this.homeMenuNotebookFlow.WrapContents = false;
             // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::JournalProgram.Properties.Resources.notebookClosed;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("League Spartan", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button6.Location = new System.Drawing.Point(3, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(175, 252);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "\r\n\r\n\r\n\r\n\r\n\r\n\r\nTitle [7 newline]";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -968,6 +1044,25 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1123, 124);
             this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // homeNewEntryBtn
+            // 
+            this.homeNewEntryBtn.BackgroundImage = global::JournalProgram.Properties.Resources.plusIconDarkened;
+            this.homeNewEntryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.homeNewEntryBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeNewEntryBtn.FlatAppearance.BorderSize = 5;
+            this.homeNewEntryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeNewEntryBtn.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeNewEntryBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.homeNewEntryBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.homeNewEntryBtn.Location = new System.Drawing.Point(935, 3);
+            this.homeNewEntryBtn.Name = "homeNewEntryBtn";
+            this.homeNewEntryBtn.Size = new System.Drawing.Size(185, 118);
+            this.homeNewEntryBtn.TabIndex = 0;
+            this.homeNewEntryBtn.Text = "Entry";
+            this.homeNewEntryBtn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.homeNewEntryBtn.UseVisualStyleBackColor = true;
+            this.homeNewEntryBtn.Click += new System.EventHandler(this.homeNewEntryBtn_Click);
             // 
             // nbEditBtn
             // 
@@ -1009,101 +1104,6 @@
             this.appTitleLbl.Text = "Desktop Journal";
             this.appTitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::JournalProgram.Properties.Resources.notebookStock1;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Controls.Add(this.dispTitleLbl);
-            this.panel2.Controls.Add(this.dispBodyText);
-            this.panel2.Controls.Add(this.dispEntryData);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(203, 44);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(923, 564);
-            this.panel2.TabIndex = 8;
-            // 
-            // dispTitleLbl
-            // 
-            this.dispTitleLbl.BackColor = System.Drawing.Color.Transparent;
-            this.dispTitleLbl.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dispTitleLbl.Location = new System.Drawing.Point(122, 48);
-            this.dispTitleLbl.Name = "dispTitleLbl";
-            this.dispTitleLbl.Size = new System.Drawing.Size(299, 81);
-            this.dispTitleLbl.TabIndex = 4;
-            this.dispTitleLbl.Text = "title";
-            this.dispTitleLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // dispBodyText
-            // 
-            this.dispBodyText.BackColor = System.Drawing.Color.Transparent;
-            this.dispBodyText.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 7.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dispBodyText.Location = new System.Drawing.Point(488, 21);
-            this.dispBodyText.Name = "dispBodyText";
-            this.dispBodyText.Size = new System.Drawing.Size(311, 515);
-            this.dispBodyText.TabIndex = 5;
-            this.dispBodyText.Text = "entry text";
-            // 
-            // dispEntryData
-            // 
-            this.dispEntryData.BackColor = System.Drawing.Color.Transparent;
-            this.dispEntryData.Font = new System.Drawing.Font("League Spartan", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dispEntryData.Location = new System.Drawing.Point(122, 141);
-            this.dispEntryData.Name = "dispEntryData";
-            this.dispEntryData.Size = new System.Drawing.Size(290, 395);
-            this.dispEntryData.TabIndex = 5;
-            this.dispEntryData.Text = "entry data";
-            this.dispEntryData.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = global::JournalProgram.Properties.Resources.notebookClosed;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("League Spartan", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(3, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(175, 252);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "\r\n\r\n\r\n\r\n\r\n\r\n\r\nTitle [7 newline]";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // homeNewEntryBtn
-            // 
-            this.homeNewEntryBtn.BackgroundImage = global::JournalProgram.Properties.Resources.plusIconDarkened;
-            this.homeNewEntryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.homeNewEntryBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeNewEntryBtn.FlatAppearance.BorderSize = 5;
-            this.homeNewEntryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeNewEntryBtn.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeNewEntryBtn.ForeColor = System.Drawing.Color.AliceBlue;
-            this.homeNewEntryBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.homeNewEntryBtn.Location = new System.Drawing.Point(935, 3);
-            this.homeNewEntryBtn.Name = "homeNewEntryBtn";
-            this.homeNewEntryBtn.Size = new System.Drawing.Size(185, 118);
-            this.homeNewEntryBtn.TabIndex = 0;
-            this.homeNewEntryBtn.Text = "Entry";
-            this.homeNewEntryBtn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.homeNewEntryBtn.UseVisualStyleBackColor = true;
-            this.homeNewEntryBtn.Click += new System.EventHandler(this.homeNewEntryBtn_Click);
-            // 
-            // entryNotebookBg
-            // 
-            this.entryNotebookBg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.entryNotebookBg.BackColor = System.Drawing.Color.Transparent;
-            this.entryNotebookBg.Image = global::JournalProgram.Properties.Resources.notebookStock1;
-            this.entryNotebookBg.InitialImage = global::JournalProgram.Properties.Resources.notebookStock1;
-            this.entryNotebookBg.Location = new System.Drawing.Point(-3, -7);
-            this.entryNotebookBg.Name = "entryNotebookBg";
-            this.entryNotebookBg.Size = new System.Drawing.Size(936, 516);
-            this.entryNotebookBg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.entryNotebookBg.TabIndex = 2;
-            this.entryNotebookBg.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1127,6 +1127,7 @@
             this.flowLayoutPanel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entryNotebookBg)).EndInit();
             this.displayPanel.ResumeLayout(false);
             this.displayPanel.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -1134,6 +1135,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.tagPanel.ResumeLayout(false);
             this.tagPanel.PerformLayout();
             this.flowLayoutPanel9.ResumeLayout(false);
@@ -1145,8 +1147,6 @@
             this.tableLayoutPanel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.entryNotebookBg)).EndInit();
             this.ResumeLayout(false);
 
         }
