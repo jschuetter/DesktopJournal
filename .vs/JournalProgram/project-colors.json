@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "198ee361-c208-4c35-901c-72ca72c0de37": {
+      "ProjectGuid": "198ee361-c208-4c35-901c-72ca72c0de37",
+      "DisplayName": "Desktop Journal",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
